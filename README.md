@@ -29,7 +29,8 @@ nix-env -iA nixpkgs.nixpkgs-fmt
 ※After starting NixOS:
 ```
 cd websocket-chat
-cargo run -p websocket-chat-server
+RUST_ENV=development cargo run -p websocket-chat-server
+# RUST_ENV=production(for production)
 
 Listening TCP on: 127.0.0.1:53939
 
@@ -43,7 +44,8 @@ Received a text message: Hello WebSocket Server#️⃣
 ※After starting NixOS:<br>
 ```
 cd websocket-chat
-cargo run -p websocket-chat-client
+RUST_ENV=development cargo run -p websocket-chat-client
+# RUST_ENV=production(for production)
 
 # Output
 Running `target/debug/websocket-chat-client`
