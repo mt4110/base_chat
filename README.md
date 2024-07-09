@@ -19,17 +19,16 @@ That's all you need.<br>
 
 ## Starting NixOS
 ```
-cd XXX/nix+Rust
+cd XXX/base_chat
 nix-shell
-nix-env -iA nixpkgs.nixpkgs-fmt
 ```
 
 ## Test Run
 1.Start the WebSocket server<br>
 ※After starting NixOS:
 ```
-cd websocket-chat
-RUST_ENV=development cargo run -p websocket-chat-server
+cd chat
+RUST_ENV=development cargo run -p chat-server
 # RUST_ENV=production(for production)
 
 Listening TCP on: 127.0.0.1:53939
@@ -43,12 +42,12 @@ Received a text message: Hello WebSocket Server#️⃣
 2.Client (Server) sends a message <font color="red">in a separate, new terminal</font><br>
 ※After starting NixOS:<br>
 ```
-cd websocket-chat
-RUST_ENV=development cargo run -p websocket-chat-client
+cd chat
+RUST_ENV=development cargo run -p chat-client
 # RUST_ENV=production(for production)
 
 # Output
-Running `target/debug/websocket-chat-client`
+Running `target/debug/chat-client`
 WebSocket handshake has been successfully completed
 Received a text message: Hello WebSocket Server#️⃣
 
